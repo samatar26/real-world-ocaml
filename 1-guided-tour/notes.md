@@ -57,3 +57,20 @@ let (!) r = r.contents
 let (:=) r x = r.contents <- x
 
 ```
+
+### Dune
+
+In order to compile our program using dune (a build system designed for use with OCaml projects), we first need to create a dune file to specify the build:
+
+```dune
+(executable
+  (name sum)
+  (libraries base stdio))
+
+```
+
+In order build an executable you run:
+
+`dune build [name].exe`
+
+This will result in the creation of a native-code executable and is located in the build folder: `_build/default/[name].exe`.
